@@ -77,6 +77,49 @@ a {
 	margin: 0 auto;
 }
 
+// Блок який повторються структурою
+.text-block {
+	display: flex;
+	justify-content: space-between;
+
+	&__description-title {
+
+		.title {
+			color: #FFF;
+			font-size: 36px;
+			font-weight: 700;
+			line-height: 1.2;
+			margin-bottom: 10px;
+		}
+
+		.subtitle {
+			color: #FFF;
+			font-size: 36px;
+			font-weight: 300;
+			line-height: 1.2;
+		}
+
+		.subtitle-arrow {
+			padding-right: 280px;
+			background: url('../img/main/icons/arrow-long.svg') no-repeat center;
+			transition: all 0.5s;
+
+			&:hover,
+			&:focus {
+				background: url('../img/main/icons/arrow-long.svg') no-repeat right center;
+			}
+		}
+	}
+
+	&__description-text {
+		max-width: 628px;
+		color: #FFF;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+}
+
 // HEADER START
 .header {
 	.background {
@@ -249,53 +292,12 @@ nav {
 // INTRODUCTION START
 .introduction {
 	margin-top: 100px;
-}
-.introduction-block {
 
-	.text-block {
-		display: flex;
+	&-block {}	
 
-		&__description-title {
-
-			margin-right: 320px;
-
-			.title {
-				color: #FFF;
-				font-size: 36px;
-				font-weight: 700;
-				line-height: 1.2;
-				margin-bottom: 10px;
-			}
-			.subtitle {
-				color: #FFF;
-				font-size: 36px;
-				font-weight: 300;
-				line-height: 1.2;
-			}
-			.subtitle-arrow {
-				padding-right: 280px;
-				background: url('../img/main/icons/arrow-long.svg') no-repeat center;
-				transition: all 0.5s;
-
-				&:hover, &:focus {
-					background: url('../img/main/icons/arrow-long.svg') no-repeat right center;
-				}
-			}
-		}
-		&__description-text {
-			max-width: 650px;
-			color: #FFF;
-			font-size: 16px;
-			font-weight: 400;
-			line-height: 1.5;
-		}
-	}
-
-
-	.introduction-block__about {
+	&-block__about {
 		display: flex;
 		margin-top: 100px;
-		justify-content: center;
 		align-items: center;
 
 		.about-block {
@@ -309,11 +311,11 @@ nav {
 					box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 				}
 			}
-		
+
 			&__text {
 				max-width: 630px;
 			}
-		
+
 			&__text-title {
 				color: #FFF;
 				font-size: 36px;
@@ -321,7 +323,7 @@ nav {
 				line-height: 1.2;
 				margin-bottom: 5px;
 			}
-		
+
 			&__text-subtitle {
 				color: rgba(255, 255, 255, 0.95);
 				font-size: 36px;
@@ -329,7 +331,7 @@ nav {
 				line-height: 1.2;
 				margin-bottom: 42px;
 			}
-		
+
 			&__text-descripsion {
 				color: #FFF;
 				font-size: 16px;
@@ -337,16 +339,75 @@ nav {
 				line-height: 1.5;
 				margin-bottom: 40px;
 			}
-		
-			&__button {}
-		
-			&__item {}
 		}
 	}
 }
 
 // INTRODUCTION END
 
+// WHY-BUILD START
+
+.why-bild {
+	margin-top: 111px;
+
+	&__cards {
+		margin-top: 102px;
+	}
+.cards-block {
+	display: flex;
+	gap: 10px;
+	
+		&__body {
+			width: 310px;
+			border-radius: 40px;
+			background: radial-gradient(50.00% 50.00% at 50.00% 50.00%, #433D60 0%, #211E2E 100%);
+			padding: 40px 28px;
+			text-align: center;
+		}
+
+		&__photo {
+			margin-bottom: 20px;
+
+			.photo-item {
+				border-radius: 50%;
+				padding: 14px;
+				background: rgba(14, 14, 14, 0.32);
+			}
+		}
+		&__text {
+			
+		}
+		&__text-title {
+			color: #FFF;
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 1.2;
+			margin-bottom: 20px;
+		}
+			&__text-title::after {
+				content: "";
+				display: block;
+				margin: 0 auto;
+				background: rgba(192, 183, 232, 0.33);
+				width: 154px;
+				height: 1px;
+				margin-top: 20px;
+			}
+		&__text-subtitle {
+			width: 250px;
+			color: #FFF;
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 1.5;
+			margin-bottom: 50px;
+		}
+		&__button {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+// WHY-BUILD END
 
 
 
