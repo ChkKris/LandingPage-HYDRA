@@ -1,0 +1,353 @@
+@use "Zeroing.scss";
+
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #302C42;
+}
+a {
+	color: #fff;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src:
+		local("Montserrat"),
+		url("../font/Montserrat-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Montserrat";
+	src :
+		local("Montserrat"),
+		url("../font/Montserrat-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-display: swap;
+}
+
+// Міксін для прозорої кнопки
+@mixin button-transparant($button: transparant) {
+	color: #fff;
+	font-weight: 700;
+	border-radius: 40px;
+	border: 2px solid #FFF;
+	text-transform: uppercase;
+	padding: 17px 38px;
+}
+// Міксін для градієнтної кнопки
+@mixin button-gradient($button-gradient: gradient) {
+	color: #343045;
+	font-weight: 700;
+	border-radius: 40px;
+	background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+	text-transform: uppercase;
+	padding: 17px 38px;
+
+}
+
+// Виклик міксінів
+.button-transparant {
+	@include button-transparant($button: transparant);
+}
+.button-gradient {
+	@include button-gradient($button-gradient: gradient);
+}
+
+// HOVER для міксінів
+.button-transparant-block:hover {
+	background-color: #FFF;
+	color: #343045;
+	transition: 0.6s;
+	box-shadow: 0 12px 16px 0 rgba(165, 165, 165, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.button-gradient-block {
+	&:hover {
+		color: #FFF;
+		background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+		box-shadow: 0 12px 16px 0 rgba(165, 165, 165, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+		transition: 0.6s;
+	}
+}
+
+[class*="__container"] {
+	max-width: 1332px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 0 auto;
+}
+
+// HEADER START
+.header {
+	.background {
+		background-color: #302C42;
+	}
+
+	&__logo {
+		display: flex;
+		padding-top: 79px;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	&-logo-img, &__menu {
+		padding-right: 20px;
+	}
+
+
+	.button-transparant-block {
+		margin-right: 40px;
+	
+
+		&:hover {
+			background-color: #FFF;
+			color: #343045;
+			transition: 0.6s;
+			box-shadow: 0 12px 16px 0 rgba(165, 165, 165, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+		}
+		
+	}
+	.button-gradient-block {
+		&:hover {
+			color: #FFF;
+			background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+			box-shadow: 0 12px 16px 0 rgba(165, 165, 165, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+			transition: 0.6s;
+		}
+	}
+	
+}
+nav {
+	.menu__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 42px;
+		font-size: 12px;
+		font-weight: 700;
+
+		
+	}
+	.menu__item {
+		text-transform: uppercase;
+	}
+
+	.menu__link:hover {
+		color: #a99ed6;
+		transition: all 0.3s;
+		
+	}
+}
+// HEADER END
+
+// MAIN-BLOCK START
+.main-block__body {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.main-block__content {
+	max-width: 550px;
+}
+
+.main-block__title {
+	font-size: 46px;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 36px;
+	margin-top: 175px;
+}
+
+.color-word {
+	background: linear-gradient(-156deg, #C0B7E8 0%, #8176AF 100%);
+	color: transparent;
+	background-clip: text;
+}
+
+.main-block__subtitle {
+	max-width: 460px;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 66px;
+}
+
+.main-block__item {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.arrow {
+	padding-right: 100px;
+	background: url('../img/main/icons/arrow.svg') no-repeat center;
+	transition: 0.5s all;
+
+	&:hover, &:focus {
+		background: url('../img/main/icons/arrow.svg') no-repeat right center;
+	}
+}
+
+.main-block__img {
+	background: rgba(0, 0, 0, 0.13);
+	border-radius: 100px 100px 100px 240px;
+	padding: 15px 17px;
+	margin-top: 124px;
+
+	.img-item {
+			border-radius: 100px 100px 100px 240px;
+		}
+}
+
+
+
+
+// INFO-ICONS START
+
+.info-icons {
+	display: flex;
+	justify-content: center;
+	margin-top: 88px;
+	padding: 30px 10px;
+	border-radius: 90px;
+	background: radial-gradient(2900.76% 50.13% at 50.00% 53.89%, rgba(58, 52, 86, 0.95) 0%, #211E2E 100%);
+	box-shadow: 0px 4px 4px 0px rgba(192, 183, 232, 0.01);
+
+	&__content {
+			display: flex;
+			align-items: center;
+		}
+
+	.content__horizontal-line::after {
+		content: '';
+		display: block;
+		height: 116px;
+		width: 0.5px;
+		background: rgba(192, 183, 232, 0.33);
+		margin-left: 43px;
+		margin-right: 43px;
+	}
+
+	&__text {
+		margin-left: 20px;
+	}
+
+	&__title {
+		color: #FFF;
+		font-size: 24px;
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+	&__subtitle {
+		color: #FFF;
+		font-size: 14px;
+		font-weight: 400;
+	}
+}
+// INFO-ICONS END
+
+// INTRODUCTION START
+.introduction {
+	margin-top: 100px;
+}
+.introduction-block {
+
+	.text-block {
+		display: flex;
+
+		&__description-title {
+
+			margin-right: 320px;
+
+			.title {
+				color: #FFF;
+				font-size: 36px;
+				font-weight: 700;
+				line-height: 1.2;
+				margin-bottom: 10px;
+			}
+			.subtitle {
+				color: #FFF;
+				font-size: 36px;
+				font-weight: 300;
+				line-height: 1.2;
+			}
+			.subtitle-arrow {
+				padding-right: 280px;
+				background: url('../img/main/icons/arrow-long.svg') no-repeat center;
+				transition: all 0.5s;
+
+				&:hover, &:focus {
+					background: url('../img/main/icons/arrow-long.svg') no-repeat right center;
+				}
+			}
+		}
+		&__description-text {
+			max-width: 650px;
+			color: #FFF;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1.5;
+		}
+	}
+
+
+	.introduction-block__about {
+		display: flex;
+		margin-top: 100px;
+		justify-content: center;
+		align-items: center;
+
+		.about-block {
+
+			&__photo {
+				margin-right: 108px;
+
+				.about-hydra-photo {
+					border-radius: 240px 100px;
+					background: #A3A3A3;
+					box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+				}
+			}
+		
+			&__text {
+				max-width: 630px;
+			}
+		
+			&__text-title {
+				color: #FFF;
+				font-size: 36px;
+				font-weight: 700;
+				line-height: 1.2;
+				margin-bottom: 5px;
+			}
+		
+			&__text-subtitle {
+				color: rgba(255, 255, 255, 0.95);
+				font-size: 36px;
+				font-weight: 300;
+				line-height: 1.2;
+				margin-bottom: 42px;
+			}
+		
+			&__text-descripsion {
+				color: #FFF;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 1.5;
+				margin-bottom: 40px;
+			}
+		
+			&__button {}
+		
+			&__item {}
+		}
+	}
+}
+
+// INTRODUCTION END
+
+
+
+
+
