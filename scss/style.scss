@@ -83,6 +83,7 @@ a {
 	justify-content: space-between;
 
 	&__description-title {
+		text-transform: uppercase;
 
 		.title {
 			color: #FFF;
@@ -291,17 +292,15 @@ nav {
 
 // INTRODUCTION START
 .introduction {
-	margin-top: 100px;
-
-	&-block {}	
+	margin-top: 100px;	
 
 	&-block__about {
 		display: flex;
 		margin-top: 100px;
 		align-items: center;
-
+		
 		.about-block {
-
+			
 			&__photo {
 				margin-right: 108px;
 
@@ -311,7 +310,7 @@ nav {
 					box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 				}
 			}
-
+			
 			&__text {
 				max-width: 630px;
 			}
@@ -322,6 +321,7 @@ nav {
 				font-weight: 700;
 				line-height: 1.2;
 				margin-bottom: 5px;
+				text-transform: uppercase;
 			}
 
 			&__text-subtitle {
@@ -330,6 +330,7 @@ nav {
 				font-weight: 300;
 				line-height: 1.2;
 				margin-bottom: 42px;
+				text-transform: uppercase;
 			}
 
 			&__text-descripsion {
@@ -342,11 +343,9 @@ nav {
 		}
 	}
 }
-
 // INTRODUCTION END
 
 // WHY-BUILD START
-
 .why-bild {
 	margin-top: 111px;
 
@@ -355,6 +354,7 @@ nav {
 	}
 .cards-block {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 10px;
 	
 		&__body {
@@ -374,15 +374,14 @@ nav {
 				background: rgba(14, 14, 14, 0.32);
 			}
 		}
-		&__text {
-			
-		}
+
 		&__text-title {
 			color: #FFF;
 			font-size: 24px;
 			font-weight: 700;
 			line-height: 1.2;
 			margin-bottom: 20px;
+			text-transform: uppercase;
 		}
 			&__text-title::after {
 				content: "";
@@ -406,9 +405,124 @@ nav {
 		}
 	}
 }
-
 // WHY-BUILD END
 
+// HARWARE START
+.hardware {
+	margin-top: 114px;
+}
+
+.hardware-block {
+	
+}
+
+.hardware-block__body {
+	
+}
+
+.hardware-block__content {
+	
+}
+
+.hardware-block__background {
+	
+}
+
+.background-harware {
+
+}
+
+.background-harware__body {
+	position: relative;
+}
+
+.photo-elem {
+	position: relative;
+	width: 100%;
+	height: 303px;
+	border-radius: 160px;
+	overflow: hidden;
+	z-index: -77;
+
+	&::before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		display: block;
+		background-color: #211E2E;
+		opacity: 79%;
+		position: absolute;
+	}
+}
+
+.background-harware__photo {
+	width: 100%;
+	object-fit: cover;
+	margin-top: -250px;
+}
+.background-harware__text {
+	position: absolute;
+	text-align: center;
+	top: 108px;
+	margin-left: 380px;
+
+	.background-harware__title {
+		color: #FFF;
+		font-size: 36px;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 11px;
+	}
+	.background-harware__subtitle {
+		color: #FFF;
+		font-size: 36px;
+		font-weight: 300;
+		line-height: 1.2;
+	}
+}
+
+
+.background-harware__button {
+	display: flex;
+	justify-content: center;
+	margin-top: -55px;
+z-index: 55;
+	&-shadow {
+		width: 100px;
+		height: 100px;
+		background: rgba(14, 14, 14, 0.32);
+		padding: 15px;
+		border-radius: 50%;
+
+	}
+
+	&-color {
+		background: linear-gradient(268deg, #C0B7E8 0%, #8176AF 100%);
+		width: 70x;
+		height: 70px;
+		border-radius: 50%;
+
+	}
+
+	.arrow-down {
+		background: url('../img/main/hardware/arrow-down.svg') no-repeat center;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// HARDWARE END
+
+// PARTNERS START
+.partners-block {
+	&__icons {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 10px;
+	}
+}
+// PARTNERS END
 
 
 
