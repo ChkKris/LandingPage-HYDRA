@@ -481,11 +481,10 @@ nav .menu__link:hover {
   margin-top: 114px;
 }
 
-.background-harware__body {
+.background-hardware__body {
   position: relative;
 }
-
-.photo-elem {
+.background-hardware__body .photo-elem {
   position: relative;
   width: 100%;
   height: 303px;
@@ -493,7 +492,7 @@ nav .menu__link:hover {
   overflow: hidden;
   z-index: -77;
 }
-.photo-elem::before {
+.background-hardware__body .photo-elem::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -502,35 +501,32 @@ nav .menu__link:hover {
   opacity: 79%;
   position: absolute;
 }
-
-.background-harware__photo {
+.background-hardware__body .photo-elem .background-hardware__photo {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   margin-top: -250px;
 }
-
-.background-harware__text {
+.background-hardware__body .background-hardware__text {
   position: absolute;
   text-align: center;
   top: 108px;
   margin-left: 380px;
 }
-.background-harware__text .background-harware__title {
+.background-hardware__body .background-hardware__text .background-hardware__title {
   color: #FFF;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 11px;
 }
-.background-harware__text .background-harware__subtitle {
+.background-hardware__body .background-hardware__text .background-hardware__subtitle {
   color: #FFF;
   font-size: 36px;
   font-weight: 300;
   line-height: 1.2;
 }
-
-.background-harware__button {
+.background-hardware__body .background-hardware__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -540,26 +536,26 @@ nav .menu__link:hover {
   margin-top: -55px;
   z-index: 55;
 }
-.background-harware__button-shadow {
+.background-hardware__body .background-hardware__button-shadow {
   width: 100px;
   height: 100px;
   background: rgba(14, 14, 14, 0.32);
   padding: 15px;
   border-radius: 50%;
 }
-.background-harware__button-color {
+.background-hardware__body .background-hardware__button-color {
   background: linear-gradient(268deg, #C0B7E8 0%, #8176AF 100%);
   width: 70x;
   height: 70px;
   border-radius: 50%;
 }
-.background-harware__button .arrow-down {
+.background-hardware__body .background-hardware__button .arrow-down {
   background: url("../img/main/hardware/arrow-down.svg") no-repeat center;
   width: 100%;
   height: 100%;
 }
 
-.partners-block__icons {
+.hardware-block__partners .partners-block__icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -570,4 +566,73 @@ nav .menu__link:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 10px;
+}
+
+.how-we-build {
+  margin-top: 70px;
+}
+.how-we-build__icons-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 120px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.how-we-build__icons-shadow {
+  width: 200px;
+  height: 200px;
+  background: rgba(13, 13, 13, 0.32);
+  padding: 15px;
+  border-radius: 50%;
+}
+.how-we-build__icons-color {
+  background: linear-gradient(268deg, #C0B7E8 0%, #8176AF 100%);
+  width: 170x;
+  height: 170px;
+  border-radius: 50%;
+}
+.how-we-build__icons-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #343045;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.how-we-build__description-block-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+}
+.how-we-build__description-block-arrow {
+  background: url("../img/main/how-we-build/small-arrow.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.how-we-build__description-block-text {
+  padding-left: 15px;
+  width: 215px;
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
 }
