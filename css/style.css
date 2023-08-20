@@ -636,3 +636,239 @@ nav .menu__link:hover {
   font-weight: 700;
   line-height: 1.2;
 }
+
+.feedback-form {
+  margin-top: 112px;
+}
+.feedback-form__wrapper {
+  border-radius: 100px;
+  background: radial-gradient(50% 50% at 50% 50%, #403A5F 0%, #211E2E 100%);
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.feedback-form__content {
+  padding: 90px 108px;
+  text-align: center;
+}
+.feedback-form-title {
+  color: #FFF;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+.feedback-form-title-line {
+  margin-bottom: 20px;
+}
+.feedback-form-subtitle {
+  color: #FFF;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+.feedback-form__input {
+  margin-top: 65px;
+}
+.feedback-form__input .feedback-form__input-name .input {
+  width: 530px;
+  height: 72px;
+  background: transparent;
+  border-radius: 40px;
+  border: 2px solid #FFF;
+  margin-right: 10px;
+  margin-bottom: 40px;
+}
+.feedback-form__input .feedback-form__input-name .input::-webkit-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input::-moz-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input:-ms-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input::-ms-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input::placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input:last-child {
+  margin-right: 0;
+}
+.feedback-form__input .feedback-form__input-name .input:focus {
+  background: #211E2E;
+  border-color: #a99ed6;
+}
+.feedback-form__input .feedback-form__input-name .input-subject {
+  width: 100%;
+  height: 72px;
+  background: transparent;
+  border-radius: 40px;
+  border: 2px solid #FFF;
+  margin-bottom: 40px;
+}
+.feedback-form__input .feedback-form__input-name .input-subject::-webkit-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input-subject::-moz-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input-subject:-ms-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input-subject::-ms-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input-subject::placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input-subject:focus {
+  background: #211E2E;
+  border-color: #a99ed6;
+}
+.feedback-form__input .feedback-form__input-name .input-text {
+  width: 100%;
+  height: 210px;
+  background: transparent;
+  border-radius: 40px;
+  border: 2px solid #FFF;
+  margin-bottom: 40px;
+}
+.feedback-form__input .feedback-form__input-name .input-text::-webkit-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input-text::-moz-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input-text:-ms-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input-text::-ms-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input-text::placeholder {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.feedback-form__input .feedback-form__input-name .input-text:focus {
+  background: #211E2E;
+  border-color: #a99ed6;
+}
+
+input, textarea {
+  color: #fff;
+  padding-left: 42px;
+}
+
+textarea {
+  padding-top: 30px;
+}
+
+.footer {
+  margin-top: 123px;
+}
+.footer__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer__logo img {
+  width: 150px;
+}
+.footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.footer__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.footer__list li {
+  margin-bottom: 30px;
+}
+.footer__social-media .social-media-title {
+  margin-bottom: 40px;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.footer__social-media .social-media-icons {
+  margin-bottom: 49px;
+}
+.footer__social-media .social-media-icons .social-media-icon {
+  margin-right: 20px;
+}
+.footer__copyright {
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+.footer__copyright .copyright-text {
+  text-align: center;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.2rem;
+}
