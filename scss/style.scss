@@ -1,8 +1,8 @@
 @use "reset.scss";
+@use "media.scss";
 
 html {
 	scroll-padding-top: 10px;
-	
 }
 
 body {
@@ -43,6 +43,9 @@ a {
 	padding: 17px 38px;
 	z-index: 12;
 }
+
+
+
 // Міксін для градієнтної кнопки
 @mixin button-gradient($button-gradient: gradient) {
 	position: relative;
@@ -54,6 +57,8 @@ a {
 	padding: 17px 38px;
 	z-index: 12;
 }
+
+
 
 // Виклик міксінів
 .button-transparant {
@@ -130,6 +135,7 @@ a {
 
 // HEADER START
 .header {
+
 	.background {
 		background-color: #302C42;
 	}
@@ -168,7 +174,12 @@ a {
 	}
 	
 }
+
+
+
 nav {
+	z-index: 200;
+
 	.menu__list {
 		display: flex;
 		flex-wrap: wrap;
@@ -176,7 +187,9 @@ nav {
 		font-size: 12px;
 		font-weight: 700;
 
-		
+		@include media.desktop {
+			font-size: 30px;
+		}
 	}
 	.menu__item {
 		text-transform: uppercase;
@@ -274,10 +287,10 @@ nav {
 
 		&-animation {
 			opacity: 0;
-			transition: 2s;
+			transition: 1s;
 			animation: img 2s 1;
 			animation-fill-mode: forwards;
-			animation-delay: 2s;
+			animation-delay: 1s;
 		}
 		@keyframes img {
 			0% {
@@ -357,23 +370,41 @@ nav {
 		font-weight: 400;
 	}
 
-		&-text-animation {
+	&-text-animation {
+		opacity: 0;
+		transition: 2s;
+		animation: img 2s 1;
+		animation-fill-mode: forwards;
+		animation-delay: 2s;
+	}
+
+	@keyframes img {
+		0% {
 			opacity: 0;
-			transition: 2s;
-			animation: img 2s 1;
-			animation-fill-mode: forwards;
-			animation-delay: 2s;
+			transform: translateX(-30%);
 		}
-	
-		@keyframes img {
+
+		100% {
+			opacity: 1;
+			transform: translateX(0%);
+		}
+	}
+
+	&-description-animation {
+		opacity: 0;
+		transition: 2s;
+		animation: description 2s 1;
+		animation-fill-mode: forwards;
+		animation-delay: 2s;
+	}
+		@keyframes description {
 			0% {
 				opacity: 0;
-				transform: translateX(-30%);
 			}
 	
 			100% {
 				opacity: 1;
-				transform: translateX(0%);
+				
 			}
 		}
 }
@@ -382,7 +413,7 @@ nav {
 // INTRODUCTION START
 .introduction {
 	margin-top: 100px;	
-
+	
 	&-block__about {
 		display: flex;
 		margin-top: 100px;
@@ -870,6 +901,7 @@ textarea {
 			letter-spacing: .2rem;
 		}
 	}
+	
 }
 // FOOTER END
 
