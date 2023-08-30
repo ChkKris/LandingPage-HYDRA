@@ -94,8 +94,18 @@ a {
 	display: flex;
 	justify-content: space-between;
 
+	@include media.landscape {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
 	&__description-title {
 		text-transform: uppercase;
+		margin-right: 200px;
+	
+	@include media.landscape {
+			margin-bottom: 30px;
+		}
 
 		.title {
 			color: #FFF;
@@ -135,7 +145,7 @@ a {
 
 // HEADER START
 .header {
-
+	
 	.background {
 		background-color: #302C42;
 	}
@@ -146,6 +156,10 @@ a {
 		justify-content: space-between;
 		flex-wrap: wrap;
 		align-items: center;
+
+	@include media.desktop {
+			padding-top: 40px;
+		}
 	}
 	&-logo-img, &__menu {
 		padding-right: 20px;
@@ -155,6 +169,9 @@ a {
 	.button-transparant-block {
 		margin-right: 40px;
 	
+		@include media.tablet {
+			display: none;
+		}
 
 		&:hover {
 			background-color: #FFF;
@@ -165,6 +182,11 @@ a {
 		
 	}
 	.button-gradient-block {
+
+	@include media.tablet {
+		display: none;
+	}
+
 		&:hover {
 			color: #FFF;
 			background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
@@ -187,9 +209,7 @@ nav {
 		font-size: 12px;
 		font-weight: 700;
 
-		@include media.desktop {
-			font-size: 30px;
-		}
+		
 	}
 	.menu__item {
 		text-transform: uppercase;
@@ -208,9 +228,23 @@ nav {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+
+	@include media.desktop {
+		flex-wrap: nowrap;
+	}
+	@include media.tablet {
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+	}
 }
 .main-block__content {
 	max-width: 550px;
+	z-index: 100;
+
+	@include media.tablet {
+		order: 2;
+	}
 }
 .main-block-animation {
 	opacity: 0;
@@ -234,6 +268,10 @@ nav {
 	position: absolute;
 	top: 280px;
 	left: 13%;
+
+	@include media.tablet {
+		display: none;
+	}
 }
 .main-block__title {
 	font-size: 46px;
@@ -242,6 +280,15 @@ nav {
 	margin-bottom: 36px;
 	margin-top: 175px;
 	
+	@include media.landscape {
+		margin-top: 160px;
+		font-size: 36px;
+		max-width: 400px;
+		margin-bottom: 26px;
+	}
+	@include media.tablet {
+		margin-top: 90px;
+	}
 }
 
 .color-word {
@@ -257,6 +304,11 @@ nav {
 	font-weight: 400;
 	line-height: 1.5;
 	margin-bottom: 66px;
+
+	@include media.landscape {
+		max-width: 380px;
+		margin-bottom: 46px;
+	}
 }
 
 .main-block__item {
@@ -273,12 +325,20 @@ nav {
 		background: url('../img/main/icons/arrow.svg') no-repeat right center;
 	}
 }
-
+.main-block__photo {
+	@include media.tablet {
+		margin-top: -40px;
+	}
+}
 .main-block__img {
 	background: rgba(0, 0, 0, 0.13);
 	border-radius: 100px 100px 100px 240px;
 	padding: 15px 17px;
 	margin-top: 124px;
+
+	@include media.landscape {
+		margin-top: 90px;
+	}
 
 	.img-item {
 		position: relative;
@@ -337,9 +397,14 @@ nav {
 	box-shadow: 0px 4px 4px 0px rgba(192, 183, 232, 0.01);
 	z-index: 6;
 
+	
 	&__content {
 			display: flex;
 			align-items: center;
+
+			@include media.landscape {
+				max-width: 320px;
+			}
 		}
 
 	.content__horizontal-line::after {
@@ -350,12 +415,15 @@ nav {
 		background: rgba(192, 183, 232, 0.33);
 		margin-left: 43px;
 		margin-right: 43px;
+
+		@include media.landscape {
+			margin-left: 0;
+			margin-right: 30px;
+		}
 	}
 
 	&__text {
 		margin-left: 20px;
-
-		
 	}
 
 	&__title {
@@ -363,6 +431,11 @@ nav {
 		font-size: 24px;
 		font-weight: 700;
 		margin-bottom: 10px;
+
+		@include media.landscape {
+			font-size: 20px;
+			margin-right: 40px;
+		}
 	}
 	&__subtitle {
 		color: #FFF;
@@ -413,17 +486,26 @@ nav {
 // INTRODUCTION START
 .introduction {
 	margin-top: 100px;	
-	
+
+
 	&-block__about {
 		display: flex;
 		margin-top: 100px;
 		align-items: center;
+
+		@include media.landscape {
+				margin-top: 50px;
+			}
 		
 		.about-block {
 			
 			&__photo {
 				margin-right: 108px;
 				z-index: 3;
+
+			@include media.landscape {
+					margin-right: 60px;
+				}
 
 				.about-hydra-photo {
 					border-radius: 240px 100px;
@@ -434,6 +516,10 @@ nav {
 			
 			&__text {
 				max-width: 630px;
+
+			@include media.desktop {
+				max-width: 400px;
+				}
 			}
 
 			&__text-title {
@@ -487,7 +573,13 @@ nav {
 	.cards-block {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	gap: 10px;
+
+	@include media.desktop {
+		margin-top: 60px;
+		gap: 50px;
+	}
 	
 		&__body {
 			width: 310px;
@@ -571,6 +663,10 @@ nav {
 			width: 100%;
 			object-fit: cover;
 			margin-top: -250px;
+
+			@include media.landscape {
+				margin-top: -200px;
+			}
 		}
 	}
 
@@ -579,6 +675,10 @@ nav {
 		text-align: center;
 		top: 108px;
 		margin-left: 380px;
+
+		@include media.landscape {
+			margin-left: 200px;
+		}
 
 	.background-hardware__title {
 		color: #FFF;
@@ -642,6 +742,10 @@ nav {
 			align-items: center;
 			justify-content: space-between;
 			margin-top: 10px;
+
+			@include media.landscape {
+				margin-top: 5px;
+			}
 		}
 	}
 }
@@ -650,6 +754,10 @@ nav {
 // HOW-WE-BUILD START
 .how-we-build {
 	margin-top: 70px;
+
+	@include media.landscape {
+		margin-top: 55px;
+	}
 	
 	&__block {
 		position: relative;
@@ -660,6 +768,14 @@ nav {
 		margin-top: 120px;
 		justify-content: space-between;
 		align-items: center;
+
+	@include media.landscape {
+		margin-top: 80px;
+	}
+	@include media.laptop {
+		gap: 40px;
+		justify-content: center;
+	}
 	}
 
 	&__icons-shadow {
@@ -711,9 +827,15 @@ nav {
 		position: absolute;
 		top: 15em;
 		z-index: -11;
+
+		@include media.landscape {
+			top: 21em;
+		}
+		@include media.laptop {
+			display: none;
+		}
 	}
 }
-
 
 // HOW-WE-BUILD END
 
@@ -764,6 +886,10 @@ nav {
 				border: 2px solid #FFF;
 				margin-right: 10px;
 				margin-bottom: 40px;
+
+				@include media.landscape {
+						width: 100%;
+					}
 
 			&::placeholder {
 				color: #FFF;
