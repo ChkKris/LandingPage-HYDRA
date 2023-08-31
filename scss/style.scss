@@ -99,13 +99,21 @@ a {
 		flex-wrap: wrap;
 	}
 
+	@include media.tablet {
+		justify-content: center;
+		text-align: center;
+	}
+
 	&__description-title {
 		text-transform: uppercase;
 		margin-right: 200px;
 	
 	@include media.landscape {
-			margin-bottom: 30px;
-		}
+		margin-bottom: 30px;
+	}
+	@include media.tablet {
+		margin-right: 0;
+	}
 
 		.title {
 			color: #FFF;
@@ -120,6 +128,7 @@ a {
 			font-size: 36px;
 			font-weight: 300;
 			line-height: 1.2;
+
 		}
 
 		.subtitle-arrow {
@@ -131,6 +140,10 @@ a {
 			&:focus {
 				background: url('../img/main/icons/arrow-long.svg') no-repeat right center;
 			}
+
+			@include media.tablet {
+				display: none;
+			}
 		}
 	}
 
@@ -140,6 +153,10 @@ a {
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 1.5;
+
+		@include media.tablet {
+			display: none;
+		}
 	}
 }
 
@@ -314,6 +331,10 @@ nav {
 .main-block__item {
 	display: flex;
 	flex-wrap: wrap;
+
+	@include media.tablet {
+		display: block;
+	}
 }
 
 .arrow {
@@ -323,6 +344,10 @@ nav {
 
 	&:hover, &:focus {
 		background: url('../img/main/icons/arrow.svg') no-repeat right center;
+	}
+
+	@include media.tablet {
+		display: none;
 	}
 }
 .main-block__photo {
@@ -485,8 +510,7 @@ nav {
 
 // INTRODUCTION START
 .introduction {
-	margin-top: 100px;	
-
+	margin-top: 100px;
 
 	&-block__about {
 		display: flex;
@@ -494,8 +518,12 @@ nav {
 		align-items: center;
 
 		@include media.landscape {
-				margin-top: 50px;
-			}
+			margin-top: 50px;
+		}
+		@include media.tablet {
+			flex-direction: column;
+			gap: 40px;
+		}
 		
 		.about-block {
 			
@@ -503,14 +531,19 @@ nav {
 				margin-right: 108px;
 				z-index: 3;
 
-			@include media.landscape {
+				@include media.landscape {
 					margin-right: 60px;
 				}
-
+				@include media.tablet {
+					margin-right: 0;
+				}
+				
+				
 				.about-hydra-photo {
 					border-radius: 240px 100px;
 					background: #A3A3A3;
 					box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
 				}
 			}
 			
@@ -519,7 +552,10 @@ nav {
 
 			@include media.desktop {
 				max-width: 400px;
-				}
+			}
+			@include media.tablet {
+				text-align: center;
+			}
 			}
 
 			&__text-title {
@@ -540,6 +576,8 @@ nav {
 				text-transform: uppercase;
 			}
 
+			
+
 			&__text-descripsion {
 				color: #FFF;
 				font-size: 16px;
@@ -551,11 +589,20 @@ nav {
 			&__line-1 {
 				position: absolute;
 				top: 84em;
+
+			@include media.tablet {
+					display: none;
+				}
 			}
 			&__line-2 {
 				position: absolute;
 				top: 103em;
+
+			@include media.tablet {
+					display: none;
+				}
 			}
+			
 		}
 	}
 }
@@ -579,6 +626,10 @@ nav {
 	@include media.desktop {
 		margin-top: 60px;
 		gap: 50px;
+	}
+	@include media.tablet {
+		margin-top: 25px;
+		gap: 30px;
 	}
 	
 		&__body {
@@ -667,6 +718,9 @@ nav {
 			@include media.landscape {
 				margin-top: -200px;
 			}
+			@include media.tablet {
+				margin-top: -150px;
+			}
 		}
 	}
 
@@ -678,6 +732,9 @@ nav {
 
 		@include media.landscape {
 			margin-left: 200px;
+		}
+		@include media.landscape {
+			margin-left: 90px;
 		}
 
 	.background-hardware__title {
@@ -769,13 +826,16 @@ nav {
 		justify-content: space-between;
 		align-items: center;
 
-	@include media.landscape {
-		margin-top: 80px;
-	}
-	@include media.laptop {
-		gap: 40px;
-		justify-content: center;
-	}
+		@include media.landscape {
+			margin-top: 80px;
+		}
+		@include media.laptop {
+			gap: 40px;
+			justify-content: center;
+		}
+		@include media.tablet {
+			margin-top: 20px;
+		}
 	}
 
 	&__icons-shadow {
@@ -845,14 +905,18 @@ nav {
 	margin-top: 112px;
 
 	&__wrapper {
-			border-radius: 100px;
-			background: radial-gradient(50% 50.00% at 50% 50.00%, #403A5F 0%, #211E2E 100%);
-			box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-		}
+		border-radius: 100px;
+		background: radial-gradient(50% 50.00% at 50% 50.00%, #403A5F 0%, #211E2E 100%);
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	}
 
 	&__content {
 		padding: 90px 108px;
 		text-align: center;
+
+		@include media.tablet {
+			padding: 40px 30px;
+		}
 	}
 	&-title {
 		color: #FFF;
@@ -866,18 +930,21 @@ nav {
 	}
 	&-subtitle {
 		color: #FFF;
-			font-size: 36px;
-			font-weight: 300;
-			line-height: 1.2;
+		font-size: 36px;
+		font-weight: 300;
+		line-height: 1.2;
 	}
 
 	&__input {
 		margin-top: 65px;
 		
 
+	@include media.tablet {
+		margin-top: 50px;
+	}
+
 	.feedback-form__input-name {
 
-	
 			.input {
 				width: 530px;
 				height: 72px;
@@ -967,19 +1034,41 @@ textarea {
 .footer {
 	margin-top: 123px;
 
+	@include media.tablet {
+		margin-top: 90px;
+	}
+	&__content {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+	
+			@include media.tablet {
+				flex-direction: column;
+				justify-content: center;
+				text-align: center;
+				gap: 50px;
+			}
+	
+	
+		}
 	&__logo {
 		display: flex;
 		align-items: center;
-
+		
+		@include media.tablet {
+			justify-content: center;
+		}
 		img {
 			width: 150px;
 		}
 	}
 
-	&__content {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+
+
+	&__vertical-line {
+		@include media.tablet {
+			display: none;
+		}
 	}
 	&__list {
 		display: flex;
@@ -995,6 +1084,10 @@ textarea {
 		.list-link:hover {
 			color: #a99ed6;
 			transition: all 0.3s;
+		}
+
+		@include media.tablet {
+			display: none;
 		}
 	}
 	&__social-media {
@@ -1013,6 +1106,8 @@ textarea {
 			margin-right: 20px;
 			}
 		}
+	}
+	&__horizontal-line {
 	}
 	&__copyright {
 		margin-top: 50px;
