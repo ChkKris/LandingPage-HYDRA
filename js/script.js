@@ -39,8 +39,8 @@ const swiper = new Swiper('.info-icons__tablet', {
 	freeMode: true,
 
 	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+		nextEl: '.arrow-swiper-next',
+		prevEl: '.arrow-swiper-prev',
 	},
 
 	slidesPerView: 1,
