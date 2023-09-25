@@ -52,7 +52,7 @@ const swiper1 = new Swiper('.info-icons__tablet', {
 	speed: 800,
 });
 
-const swiper2 = new Swiper('.why-bild__cards-swiper', {
+const swiper2 = new Swiper('.cards-block', {
 	direction: 'horizontal',
 	loop: false,
 	loopedlides: 0,
@@ -60,8 +60,8 @@ const swiper2 = new Swiper('.why-bild__cards-swiper', {
 	freeMode: true,
 
 	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+		nextEl: '.cards-block__button-swiper-next',
+		prevEl: '.cards-block__button-swiper-prev',
 	},
 
 	slidesPerView: 1,
