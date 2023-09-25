@@ -31,7 +31,7 @@ if (iconMenu) {
 
 
 
-const swiper = new Swiper('.info-icons__tablet', {
+const swiper1 = new Swiper('.info-icons__tablet', {
 	direction: 'horizontal',
 	loop: false,
 	loopedlides: 0,
@@ -41,6 +41,27 @@ const swiper = new Swiper('.info-icons__tablet', {
 	navigation: {
 		nextEl: '.arrow-swiper-next',
 		prevEl: '.arrow-swiper-prev',
+	},
+
+	slidesPerView: 1,
+
+	spaceBetween: 24,
+
+	slidesPerGroup: 1,
+
+	speed: 800,
+});
+
+const swiper2 = new Swiper('.cards-block', {
+	direction: 'horizontal',
+	loop: false,
+	loopedlides: 0,
+
+	freeMode: true,
+
+	navigation: {
+		nextEl: '.cards-block__button-swiper-next',
+		prevEl: '.cards-block__button-swiper-prev',
 	},
 
 	slidesPerView: 1,
