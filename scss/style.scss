@@ -501,6 +501,7 @@ nav {
 	z-index: 6;
 
 	@include media.tablet {
+		display: none;
 		background: none;
 		margin-top: 0;
 	}
@@ -781,9 +782,171 @@ nav {
 	position: relative;
 
 	@include media.tablet {
+
 		margin-top: 80px;
 	}
+	.cards-desktop {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		margin-top: 100px;
 
+		&__elems {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 310px;
+			height: 100%;
+			background: radial-gradient(50.00% 50.00% at 50.00% 50.00%, #433D60 0%, #211E2E 100%);
+			border-radius: 40px;
+		
+		}
+
+		.content-elems {
+			padding: 30px 60px;
+			text-align: center;
+
+			@include media.mobile {
+				padding: 30px 10px;
+			}
+
+			&__photo {
+				margin-bottom: 20px;
+
+				.photo-item {
+					border-radius: 50%;
+					padding: 14px;
+					background: rgba(14, 14, 14, 0.32);
+				}
+			}
+
+			&__title {
+				color: #FFF;
+				font-size: 24px;
+				font-weight: 700;
+				line-height: 1.2;
+				margin-bottom: 20px;
+				text-transform: uppercase;
+			}
+
+			&__title::after {
+				content: "";
+				display: block;
+				margin: 0 auto;
+				background: rgba(192, 183, 232, 0.33);
+				width: 154px;
+				height: 1px;
+				margin-top: 20px;
+			}
+
+			&__subtitle {
+				width: 250px;
+				color: #FFF;
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 1.5;
+				margin-bottom: 50px;
+			}
+
+			&__button {
+				margin-bottom: 20px;
+			}
+		}
+
+		@include media.tablet {
+			display: none;
+		}
+
+		
+	}
+	.cards-block {
+		display: none;
+			
+		@include media.tablet {
+			display: flex;
+			&__content {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			&__button-swiper-prev {
+				z-index: 10;
+
+				.arrows-prev {
+					margin-right: -35px;
+				}
+			}
+			&__button-swiper-next {
+				z-index: 10;
+
+				.arrows-next {
+					margin-left: -35px;
+				}
+			}
+			&__elems {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 310px;
+				height: 100%;
+				background: radial-gradient(50.00% 50.00% at 50.00% 50.00%, #433D60 0%, #211E2E 100%);
+				border-radius: 40px;
+				
+			}
+			
+			.content-elems {
+				padding: 30px 60px;
+				text-align: center;
+					@include media.mobile {
+						padding: 30px 10px;
+					}
+
+				&__photo {
+					margin-bottom: 20px;
+		
+					.photo-item {
+						border-radius: 50%;
+						padding: 14px;
+						background: rgba(14, 14, 14, 0.32);
+					}
+				}
+				&__title {
+					color: #FFF;
+					font-size: 24px;
+					font-weight: 700;
+					line-height: 1.2;
+					margin-bottom: 20px;
+					text-transform: uppercase;
+				}
+				&__title::after {
+					content: "";
+					display: block;
+					margin: 0 auto;
+					background: rgba(192, 183, 232, 0.33);
+					width: 154px;
+					height: 1px;
+					margin-top: 20px;
+				}
+				&__subtitle {
+					width: 250px;
+					color: #FFF;
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 1.5;
+					margin-bottom: 50px;
+				}
+				&__button {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	&__block {
+		margin-top: 100px;
+	}
 	// &__cards {
 	// 	display: flex;
 	// }
@@ -795,14 +958,14 @@ nav {
 	// 	justify-content: center;
 	// 	gap: 10px;
 
-		@include media.desktop {
-			margin-top: 60px;
-			gap: 50px;
-		}
-		@include media.tablet {
-			margin-top: 15px;
-			gap: 17px;
-		}
+		// @include media.desktop {
+		// 	margin-top: 60px;
+		// 	gap: 50px;
+		// }
+		// @include media.tablet {
+		// 	margin-top: 15px;
+		// 	gap: 17px;
+		// }
 		// @include media.mobile {
 		// 	flex-wrap: nowrap;
 		// 	overflow: hidden;
@@ -864,55 +1027,60 @@ nav {
 		// 	margin-bottom: 20px;
 		// }
 
-		&__cards-swiper {
-			width: 310px;
-				border-radius: 40px;
-				background: radial-gradient(50.00% 50.00% at 50.00% 50.00%, #433D60 0%, #211E2E 100%);
-				padding: 40px 28px;
-				text-align: center;
+	// .cards-swiper {
 
-					.why-bild__cards-photo {
-								margin-bottom: 20px;
-						
-								.photo-item {
-									border-radius: 50%;
-									padding: 14px;
-									background: rgba(14, 14, 14, 0.32);
-								}
-							}
-						
-							&__text-title {
-								color: #FFF;
-								font-size: 24px;
-								font-weight: 700;
-								line-height: 1.2;
-								margin-bottom: 20px;
-								text-transform: uppercase;
-							}
-						
-							&__text-title::after {
-								content: "";
-								display: block;
-								margin: 0 auto;
-								background: rgba(192, 183, 232, 0.33);
-								width: 154px;
-								height: 1px;
-								margin-top: 20px;
-							}
-						
-							&__text-subtitle {
-								width: 250px;
-								color: #FFF;
-								font-size: 12px;
-								font-weight: 400;
-								line-height: 1.5;
-								margin-bottom: 50px;
-							}
-						
-							&__button {
-								margin-bottom: 20px;
-							}
-		}
+	// 	.cards-photo {
+	// 		margin-bottom: 20px;
+	
+	// 		.photo-item {
+	// 			border-radius: 50%;
+	// 			padding: 14px;
+	// 			background: rgba(14, 14, 14, 0.32);
+	// 		}
+	// 	}
+	// 	.cards-block__text-title {
+	// 		color: #FFF;
+	// 		font-size: 24px;
+	// 		font-weight: 700;
+	// 		line-height: 1.2;
+	// 		margin-bottom: 20px;
+	// 		text-transform: uppercase;
+
+	// 		&::after {
+	// 			content: "";
+	// 			display: block;
+	// 			margin: 0 auto;
+	// 			background: rgba(192, 183, 232, 0.33);
+	// 			width: 154px;
+	// 			height: 1px;
+	// 			margin-top: 20px;
+	// 		}
+	// 	}
+	// 	.cards-block__text-subtitle {
+	// 		width: 250px;
+	// 		color: #FFF;
+	// 		font-size: 14px;
+	// 		font-weight: 400;
+	// 		line-height: 1.5;
+	// 		margin-bottom: 50px;
+	// 	}
+	// 	.cards-block__button {
+	// 		margin-bottom: 20px;
+	// 	}
+	// 					// .swiper-button-prev {
+	// 					// 	position: absolute;
+	// 					// }
+	// }
+	// .cards-slides {
+	// 			top: 10px;
+	// 				max-width: 310px;
+	// 				border-radius: 40px;
+	// 				background: radial-gradient(50.00% 50.00% at 50.00% 50.00%, #433D60 0%, #211E2E 100%);
+	// 				padding: 40px 28px;
+	// 				text-align: center;
+	// }
+
+
 }
 
 // WHY-BUILD END
@@ -920,6 +1088,9 @@ nav {
 // HARWARE START
 .hardware {
 	margin-top: 114px;
+	@include media.mobile {
+		margin-top: 80px;
+	}
 }
 
 .background-hardware {
@@ -937,6 +1108,9 @@ nav {
 
 		@include media.tablet {
 			height: 200px;
+		}
+		@include media.mobile {
+			height: 160px;
 		}
 
 		&::before {
@@ -958,10 +1132,10 @@ nav {
 				margin-top: -200px;
 			}
 			@include media.tablet {
-				margin-top: -150px;
+				margin-top: -90px;
 			}
 			@include media.mobile {
-				margin-top: -80px;
+				margin-top: -50px;
 			}
 		}
 	}
@@ -977,7 +1151,8 @@ nav {
 			top: 114px;
 		}
 		@include media.tablet {
-			margin-left: 135px;
+			justify-content: center;
+			margin-left: 20px;
 			top: 50px;
 		}
 
@@ -1019,7 +1194,7 @@ nav {
 		margin-top: -55px;
 		z-index: 55;
 
-		@include media.mobile {
+		@include media.tablet {
 			display: none;
 		}
 
