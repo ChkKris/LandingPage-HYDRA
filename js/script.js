@@ -73,3 +73,46 @@ const swiper2 = new Swiper('.cards-block', {
 	speed: 800,
 });
 
+const swiper3 = new Swiper('.partners-swiper', {
+	direction: 'horizontal',
+	loop: false,
+	loopedlides: 0,
+
+	freeMode: true,
+
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+
+	slidesPerView: 1,
+
+	spaceBetween: 24,
+
+	slidesPerGroup: 1,
+
+	speed: 800,
+});
+
+
+const swiper4 = new Swiper('.icons-number-swiper', {
+	direction: 'horizontal',
+	loop: false,
+	loopedlides: 0,
+
+	freeMode: true,
+
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+
+	slidesPerView: 1,
+
+	spaceBetween: 24,
+
+	slidesPerGroup: 1,
+
+	speed: 800,
+});
+
