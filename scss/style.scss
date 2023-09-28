@@ -36,7 +36,7 @@ a {
 	font-display: swap;
 }
 
-// Міксін для прозорої кнопки
+// A mixin for a transparent button
 @mixin button-transparant($button: transparant) {
 	position: relative;
 	color: #fff;
@@ -51,7 +51,7 @@ a {
 
 
 
-// Міксін для градієнтної кнопки
+// A gradient button mixin
 @mixin button-gradient($button-gradient: gradient) {
 	position: relative;
 	color: #343045;
@@ -65,7 +65,7 @@ a {
 
 
 
-// Виклик міксінів
+// Call mixins
 .button-transparant {
 	@include button-transparant($button: transparant);
 }
@@ -73,7 +73,7 @@ a {
 	@include button-gradient($button-gradient: gradient);
 }
 
-// HOVER для міксінів
+// HOVER for mixins
 .button-transparant-block:hover {
 	background-color: #FFF;
 	color: #343045;
@@ -94,7 +94,7 @@ a {
 	margin: 0 auto;
 }
 
-// Блок який повторються структурою
+// Block that repeats the structure
 .text-block {
 	display: flex;
 	justify-content: space-between;
@@ -173,9 +173,14 @@ a {
 	}
 }
 
+.swiper-button-prev::after,
+.swiper-button-next::after {
+	color: #C0B7E8;
+
+}
+
+
 // HEADER START
-
-
 .header {
 
 	.background {
@@ -223,7 +228,7 @@ a {
 		}
 
 		.header__button {
-			@include media.tablet {
+			@include media.laptop {
 				display: none;
 			}
 		}
@@ -241,6 +246,7 @@ a {
 				height: 21px;
 
 				span {
+					cursor: pointer;
 					height: 3px;
 					width: 75%;
 					transform: scale(1);
@@ -252,6 +258,7 @@ a {
 				&::before,
 				&::after {
 					content: '';
+					cursor: pointer;
 					position: absolute;
 					height: 3px;
 					width: 100%;
@@ -288,8 +295,6 @@ a {
 	}
 }
 
-
-
 nav {
 	z-index: 200;
 
@@ -312,78 +317,196 @@ nav {
 		
 	}
 }
-
 // HEADER END
 
 // MAIN-BLOCK START
-.main-block__body {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-
-	@include media.desktop {
-		flex-wrap: nowrap;
-	}
-	@include media.tablet {
+.main-block {
+	&__body {
+		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
-		text-align: center;
-	}
-}
-.main-block__content {
-	max-width: 550px;
-	z-index: 44;
+		justify-content: space-between;
 
-	@include media.tablet {
-		order: 2;
-	}
-}
-.main-block-animation {
-	opacity: 0;
-	transition: 2s;
-	animation: show 2s 1;
-	animation-fill-mode: forwards;
-	animation-delay: 0.5s;
-}
+		@include media.desktop {
+			flex-wrap: nowrap;
+		}
 
-@keyframes show {
-	0% {
-		opacity: 0;
-		transform: translateX(-10%);
+		@include media.tablet {
+			flex-wrap: wrap;
+			justify-content: center;
+			text-align: center;
+		}
 	}
-	100% {
-		opacity: 1;
-		transform: translateX(0%);
-	}
-}
-.main-block__line {
-	position: absolute;
-	top: 280px;
-	left: 13%;
-
-	@include media.tablet {
-		display: none;
-	}
-}
-.main-block__title {
-	font-size: 46px;
-	font-weight: 700;
-	color: #fff;
-	margin-bottom: 36px;
-	margin-top: 175px;
+	&__content {
+		max-width: 550px;
+		z-index: 44;
 	
-	@include media.landscape {
-		margin-top: 160px;
-		font-size: 36px;
-		max-width: 400px;
-		margin-bottom: 26px;
+		@include media.tablet {
+			order: 2;
+		}
 	}
-	@include media.tablet {
-		margin-top: 90px;
-		font-size: 25px;
+	.main-block-animation {
+		opacity: 0;
+		transition: 2s;
+		animation: show 2s 1;
+		animation-fill-mode: forwards;
+		animation-delay: 0.5s;
+
+		@keyframes show {
+			0% {
+				opacity: 0;
+				transform: translateX(-10%);
+			}
+	
+			100% {
+				opacity: 1;
+				transform: translateX(0%);
+			}
+		}
+	}
+	&__line {
+		position: absolute;
+		top: 280px;
+		left: 13%;
+	
+		@include media.tablet {
+			display: none;
+		}
+	}
+	&__title {
+		font-size: 46px;
+		font-weight: 700;
+		color: #fff;
+		margin-bottom: 36px;
+		margin-top: 175px;
+	
+		@include media.landscape {
+			margin-top: 160px;
+			font-size: 36px;
+			max-width: 400px;
+			margin-bottom: 26px;
+		}
+	
+		@include media.tablet {
+			margin-top: 90px;
+			font-size: 25px;
+		}
+	
+		@include media.mobile {
+			margin-top: 40px;
+			font-size: 20px;
+		}
+	}
+	&__subtitle {
+		max-width: 460px;
+		color: #FFF;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.5;
+		margin-bottom: 66px;
+	
+		@include media.landscape {
+			max-width: 380px;
+			margin-bottom: 46px;
+		}
+	
+		@include media.tablet {
+			display: none;
+		}
+	}	
+	&__button {
+		@include media.tablet {
+			margin-top: 37px;
+		}
+	}
+	&__item {
+		display: flex;
+		flex-wrap: wrap;
+	
+		@include media.tablet {
+			display: block;
+		}
+	}
+	.arrow {
+		padding-right: 100px;
+		background: url('../img/main/icons/arrow.svg') no-repeat center;
+		transition: 0.5s all;
+
+		&:hover,
+		&:focus {
+			background: url('../img/main/icons/arrow.svg') no-repeat right center;
+		}
+
+		@include media.tablet {
+			display: none;
+		}
+	}
+	&__photo {
+		@include media.tablet {
+			margin-top: -40px;
+		}
+	}
+	&__img {
+		background: rgba(0, 0, 0, 0.13);
+		border-radius: 100px 100px 100px 240px;
+		padding: 15px 17px;
+		margin-top: 124px;
+	
+		@include media.landscape {
+			margin-top: 90px;
+		}
+	
+		@include media.mobile {
+			padding: 9px 10px;
+		}
+	
+		.img-item {
+			position: relative;
+			border-radius: 100px 100px 100px 240px;
+			z-index: 55;
+	
+			&-animation {
+				opacity: 0;
+				transition: 1s;
+				animation: img 2s 1;
+				animation-fill-mode: forwards;
+				animation-delay: 1s;
+			}
+	
+			@keyframes img {
+				0% {
+					opacity: 0;
+					transform: translateX(-30%);
+				}
+	
+				100% {
+					opacity: 1;
+					transform: translateX(0%);
+				}
+			}
+		}
+	}
+	&__photo-background-line {
+		@include media.mobile {
+			display: none;
+		}
+	}
+	&__photo-background-line-1 {
+		position: absolute;
+		top: 0;
+		right: 20%;
+	}
+	
+	&__photo-background-line-2 {
+		position: absolute;
+		top: 40%;
+	}
+	
+	&__photo-background-line-3 {
+		position: absolute;
+		top: 19%;
+		right: 14%;
 	}
 }
-
 .color-word {
 	background: linear-gradient(-156deg, #C0B7E8 0%, #8176AF 100%);
 	color: transparent;
@@ -392,114 +515,12 @@ nav {
 	@include media.tablet {
 		font-size: 36px;
 	}
-}
-
-.main-block__subtitle {
-	max-width: 460px;
-	color: #FFF;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.5;
-	margin-bottom: 66px;
-
-	@include media.landscape {
-		max-width: 380px;
-		margin-bottom: 46px;
-	}
-	@include media.tablet {
-		display: none;
+	@include media.mobile {
+		font-size: 30px;
 	}
 }
-.main-block__button {
-	@include media.tablet {
-		margin-top: 37px;
-	}
-	
-}
-
-.main-block__item {
-	display: flex;
-	flex-wrap: wrap;
-
-	@include media.tablet {
-		display: block;
-	}
-}
-
-.arrow {
-	padding-right: 100px;
-	background: url('../img/main/icons/arrow.svg') no-repeat center;
-	transition: 0.5s all;
-
-	&:hover, &:focus {
-		background: url('../img/main/icons/arrow.svg') no-repeat right center;
-	}
-
-	@include media.tablet {
-		display: none;
-	}
-}
-.main-block__photo {
-	@include media.tablet {
-		margin-top: -40px;
-	}
-}
-.main-block__img {
-	background: rgba(0, 0, 0, 0.13);
-	border-radius: 100px 100px 100px 240px;
-	padding: 15px 17px;
-	margin-top: 124px;
-
-	@include media.landscape {
-		margin-top: 90px;
-	}
-
-	.img-item {
-		position: relative;
-		border-radius: 100px 100px 100px 240px;
-		z-index: 55;
-
-		&-animation {
-			opacity: 0;
-			transition: 1s;
-			animation: img 2s 1;
-			animation-fill-mode: forwards;
-			animation-delay: 1s;
-		}
-		@keyframes img {
-			0% {
-				opacity: 0;
-				transform: translateX(-30%);
-			}
-
-			100% {
-				opacity: 1;
-				transform: translateX(0%);
-			}
-		}
-	}
-}
-
-.main-block__photo-background-line-1 {
-	position: absolute;
-	top: 0;
-	right: 20%;
-}
-.main-block__photo-background-line-2 {
-	position: absolute;
-	top: 40%;
-}
-.main-block__photo-background-line-3 {
-	position: absolute;
-	top: 19%;
-	right: 14%;
-}
-
-
-
 
 // INFO-ICONS START
-
 .info-icons {
 	position: relative;
 	display: flex;
@@ -516,7 +537,6 @@ nav {
 		background: none;
 		margin-top: 0;
 	}
-
 	
 	&__content {
 			display: flex;
@@ -545,7 +565,6 @@ nav {
 			margin-right: 30px;
 		}
 	}
-
 
 	&__text {
 		margin-left: 20px;
@@ -670,7 +689,6 @@ nav {
 			padding: 10px 8px;
 		}
 	}
-
 }
 // INFO-ICONS END
 
@@ -963,12 +981,10 @@ nav {
 	&__block {
 		margin-top: 100px;
 	}
-
 }
-
 // WHY-BUILD END
 
-// HARWARE START
+// HARDWARE START
 .hardware {
 	margin-top: 114px;
 	@include media.mobile {
@@ -976,9 +992,14 @@ nav {
 	}
 
 	.background-hardware {
-
+	
 		&__body {
 			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
 
 			.photo-elem {
 				position: relative;
@@ -1028,19 +1049,7 @@ nav {
 			.background-hardware__text {
 				position: absolute;
 				text-align: center;
-				top: 108px;
-				margin-left: 380px;
-
-				@include media.landscape {
-					margin-left: 220px;
-					top: 114px;
-				}
-
-				@include media.tablet {
-					justify-content: center;
-					margin-left: 20px;
-					top: 50px;
-				}
+				
 
 				.background-hardware__title {
 					color: #FFF;
@@ -1069,7 +1078,7 @@ nav {
 					}
 
 					@include media.mobile {
-						font-size: 24px;
+						font-size: 20px;
 					}
 				}
 			}
@@ -1095,7 +1104,7 @@ nav {
 
 				&-color {
 					background: linear-gradient(268deg, #C0B7E8 0%, #8176AF 100%);
-					width: 70x;
+					width: 70px;
 					height: 70px;
 					border-radius: 50%;
 				}
@@ -1112,7 +1121,6 @@ nav {
 					}
 				}
 			}
-
 		}
 	}
 
@@ -1143,13 +1151,6 @@ nav {
 			display: flex;
 			text-align: center;
 			margin-top: 40px;
-
-			
-
-			.swiper-button-prev::after, .swiper-button-next::after {
-				color: #C0B7E8;
-
-			}
 		}
 		@include media.mobile {
 
@@ -1161,14 +1162,9 @@ nav {
 
 			}
 		}
-
+		
 	}
 }
-
-
-
-
-
 // HARDWARE END
 
 // HOW-WE-BUILD START
@@ -1269,6 +1265,7 @@ nav {
 
 			.icons-number-swiper__slide {
 				display: flex;
+				flex-direction: column;
 				justify-content: center;
 				align-items: center;
 				text-align: center;
@@ -1310,11 +1307,9 @@ nav {
 		}
 	}
 }
-
 // HOW-WE-BUILD END
 
 // FEEDBACK-FORM START
-
 .feedback-form {
 	margin-top: 112px;
 
@@ -1361,52 +1356,71 @@ nav {
 		margin-top: 65px;
 		
 
-	@include media.tablet {
-		margin-top: 50px;
-	}
-	@include media.mobile {
-		margin-top: 30px;
-	}
-
-	.feedback-form__input-name {
-
-			.input {
-				width: 530px;
-				height: 72px;
-				background: transparent;
-				border-radius: 40px;
-				border: 2px solid #FFF;
-				margin-right: 10px;
-				margin-bottom: 40px;
-
-				@include media.landscape {
-					width: 100%;
-				}
-				@include media.mobile {
-					margin-bottom: 30px;
-				}
-
-			&::placeholder {
-				color: #FFF;
-				font-size: 14px;
-				font-weight: 400;
-				line-height: 1.1;
-			}
-			&:last-child {
-				margin-right: 0;
-			}
-
-			&:focus {
-				background: #211E2E;
-				border-color: #a99ed6;
-			}
+		@include media.tablet {
+			margin-top: 50px;
+		}
+		@include media.mobile {
+			margin-top: 30px;
 		}
 
-		
+		.feedback-form__input-name {
 
-			.input-subject {
+				.input {
+					width: 530px;
+					height: 72px;
+					background: transparent;
+					border-radius: 40px;
+					border: 2px solid #FFF;
+					margin-right: 10px;
+					margin-bottom: 40px;
+
+					@include media.landscape {
+						width: 100%;
+					}
+					@include media.mobile {
+						margin-bottom: 30px;
+					}
+
+				&::placeholder {
+					color: #FFF;
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 1.1;
+				}
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&:focus {
+					background: #211E2E;
+					border-color: #a99ed6;
+				}
+			}
+
+			
+
+				.input-subject {
+					width: 100%;
+					height: 72px;
+					background: transparent;
+					border-radius: 40px;
+					border: 2px solid #FFF;
+					margin-bottom: 40px;
+
+					&::placeholder {
+						color: #FFF;
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 1.1;
+					}
+					&:focus {
+						background: #211E2E;
+						border-color: #a99ed6;
+					}
+				}
+			.input-text {
 				width: 100%;
-				height: 72px;
+				height: 210px;
 				background: transparent;
 				border-radius: 40px;
 				border: 2px solid #FFF;
@@ -1423,29 +1437,8 @@ nav {
 					border-color: #a99ed6;
 				}
 			}
-		.input-text {
-			width: 100%;
-			height: 210px;
-			background: transparent;
-			border-radius: 40px;
-			border: 2px solid #FFF;
-			margin-bottom: 40px;
-
-			&::placeholder {
-				color: #FFF;
-				font-size: 14px;
-				font-weight: 400;
-				line-height: 1.1;
-			}
-			&:focus {
-				background: #211E2E;
-				border-color: #a99ed6;
-			}
 		}
 	}
-	
-}
-
 }
 
 input, textarea{
@@ -1455,7 +1448,6 @@ input, textarea{
 textarea {
 	padding-top: 30px;
 }
-
 // FEEDBACK-FORM END
 
 // FOOTER START
@@ -1490,8 +1482,6 @@ textarea {
 			width: 150px;
 		}
 	}
-
-
 
 	&__vertical-line {
 		@include media.tablet {

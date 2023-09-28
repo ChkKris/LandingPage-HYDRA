@@ -258,6 +258,11 @@ a {
   }
 }
 
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #C0B7E8;
+}
+
 .header .background {
   background-color: #302C42;
 }
@@ -314,7 +319,7 @@ a {
     padding: 150px 0px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .header__menu .header__button {
     display: none;
   }
@@ -339,6 +344,7 @@ a {
     height: 21px;
   }
   .header__menu .menu__icon span {
+    cursor: pointer;
     height: 3px;
     width: 75%;
     -webkit-transform: scale(1);
@@ -350,6 +356,7 @@ a {
   }
   .header__menu .menu__icon::before, .header__menu .menu__icon::after {
     content: "";
+    cursor: pointer;
     position: absolute;
     height: 3px;
     width: 100%;
@@ -429,7 +436,6 @@ nav .menu__link:hover {
     text-align: center;
   }
 }
-
 .main-block__content {
   max-width: 550px;
   z-index: 44;
@@ -441,8 +447,7 @@ nav .menu__link:hover {
             order: 2;
   }
 }
-
-.main-block-animation {
+.main-block .main-block-animation {
   opacity: 0;
   -webkit-transition: 2s;
   transition: 2s;
@@ -453,7 +458,6 @@ nav .menu__link:hover {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
-
 @-webkit-keyframes show {
   0% {
     opacity: 0;
@@ -466,7 +470,6 @@ nav .menu__link:hover {
             transform: translateX(0%);
   }
 }
-
 @keyframes show {
   0% {
     opacity: 0;
@@ -489,7 +492,6 @@ nav .menu__link:hover {
     display: none;
   }
 }
-
 .main-block__title {
   font-size: 46px;
   font-weight: 700;
@@ -511,19 +513,12 @@ nav .menu__link:hover {
     font-size: 25px;
   }
 }
-
-.color-word {
-  background: linear-gradient(-156deg, #C0B7E8 0%, #8176AF 100%);
-  color: transparent;
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-@media (max-width: 768px) {
-  .color-word {
-    font-size: 36px;
+@media (max-width: 480px) {
+  .main-block__title {
+    margin-top: 40px;
+    font-size: 20px;
   }
 }
-
 .main-block__subtitle {
   max-width: 460px;
   color: #FFF;
@@ -543,13 +538,11 @@ nav .menu__link:hover {
     display: none;
   }
 }
-
 @media (max-width: 768px) {
   .main-block__button {
     margin-top: 37px;
   }
 }
-
 .main-block__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -562,28 +555,25 @@ nav .menu__link:hover {
     display: block;
   }
 }
-
-.arrow {
+.main-block .arrow {
   padding-right: 100px;
   background: url("../img/main/icons/arrow.svg") no-repeat center;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
-.arrow:hover, .arrow:focus {
+.main-block .arrow:hover, .main-block .arrow:focus {
   background: url("../img/main/icons/arrow.svg") no-repeat right center;
 }
 @media (max-width: 768px) {
-  .arrow {
+  .main-block .arrow {
     display: none;
   }
 }
-
 @media (max-width: 768px) {
   .main-block__photo {
     margin-top: -40px;
   }
 }
-
 .main-block__img {
   background: rgba(0, 0, 0, 0.13);
   border-radius: 100px 100px 100px 240px;
@@ -593,6 +583,11 @@ nav .menu__link:hover {
 @media (max-width: 1024px) {
   .main-block__img {
     margin-top: 90px;
+  }
+}
+@media (max-width: 480px) {
+  .main-block__img {
+    padding: 9px 10px;
   }
 }
 .main-block__img .img-item {
@@ -635,22 +630,41 @@ nav .menu__link:hover {
             transform: translateX(0%);
   }
 }
-
+@media (max-width: 480px) {
+  .main-block__photo-background-line {
+    display: none;
+  }
+}
 .main-block__photo-background-line-1 {
   position: absolute;
   top: 0;
   right: 20%;
 }
-
 .main-block__photo-background-line-2 {
   position: absolute;
   top: 40%;
 }
-
 .main-block__photo-background-line-3 {
   position: absolute;
   top: 19%;
   right: 14%;
+}
+
+.color-word {
+  background: linear-gradient(-156deg, #C0B7E8 0%, #8176AF 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+@media (max-width: 768px) {
+  .color-word {
+    font-size: 36px;
+  }
+}
+@media (max-width: 480px) {
+  .color-word {
+    font-size: 30px;
+  }
 }
 
 .info-icons {
@@ -1189,6 +1203,20 @@ nav .menu__link:hover {
 }
 .hardware .background-hardware__body {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 .hardware .background-hardware__body .photo-elem {
   position: relative;
@@ -1241,23 +1269,6 @@ nav .menu__link:hover {
 .hardware .background-hardware__body .background-hardware__text {
   position: absolute;
   text-align: center;
-  top: 108px;
-  margin-left: 380px;
-}
-@media (max-width: 1024px) {
-  .hardware .background-hardware__body .background-hardware__text {
-    margin-left: 220px;
-    top: 114px;
-  }
-}
-@media (max-width: 768px) {
-  .hardware .background-hardware__body .background-hardware__text {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-left: 20px;
-    top: 50px;
-  }
 }
 .hardware .background-hardware__body .background-hardware__text .background-hardware__title {
   color: #FFF;
@@ -1289,7 +1300,7 @@ nav .menu__link:hover {
 }
 @media (max-width: 480px) {
   .hardware .background-hardware__body .background-hardware__text .background-hardware__subtitle {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .hardware .background-hardware__body .background-hardware__button {
@@ -1316,7 +1327,7 @@ nav .menu__link:hover {
 }
 .hardware .background-hardware__body .background-hardware__button-color {
   background: linear-gradient(268deg, #C0B7E8 0%, #8176AF 100%);
-  width: 70x;
+  width: 70px;
   height: 70px;
   border-radius: 50%;
 }
@@ -1363,9 +1374,6 @@ nav .menu__link:hover {
     display: flex;
     text-align: center;
     margin-top: 40px;
-  }
-  .hardware .partners-swiper .swiper-button-prev::after, .hardware .partners-swiper .swiper-button-next::after {
-    color: #C0B7E8;
   }
 }
 @media (max-width: 480px) {
@@ -1510,6 +1518,10 @@ nav .menu__link:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
